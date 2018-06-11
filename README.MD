@@ -66,7 +66,7 @@ Create a new build definition (*Build and release* --> *New*) for your project u
 2.	From Phase 1, make sure the agent queue is set to *<inherit from definition>*
 
 3.	Add the first step and search for *Docker Compose*
-From the *Docker Compose File* browse to the compose file in your project. Configure te *Action* to run a Docker Compose command. The command we will run is *build*.
+From the *Docker Compose File* option browse to the compose file in your project. Configure te *Action* to run a Docker Compose command. The command we will run is *build*.
 
 ![compose build](/doc/compose_build.PNG)
 
