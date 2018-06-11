@@ -101,15 +101,16 @@ Once your build is successful you can create a release process.
 
 ![CI](/doc/searchkub.PNG)
 
-4.	Once the environment has been added navigate to *tasks*. You will see that *kubectl apply* is configured by default. Because we want to update our already running container on AKS, we will change this step to use the *set image* command. 
+4.	Once the environment has been added navigate to *tasks*. You will see that *kubectl apply* is configured by default. Because we want to update our already running container on AKS, we will change this step to use the *set image* command.
 
 Configure the following settings:
 
 Display name: *Set image*
-Kubernetes Service Connection: <Select your Kubernetes service endpoint here>
+Kubernetes Service Connection: *<Select your Kubernetes service endpoint here>*
 Namespace: empty for default or enter your namespace if your configured one
 Command: *set*
 Arguments: **example** *image deployment demo-netcoreweb-web demo-netcoreweb-web=acrdemo01.azurecr.io/demo-netcoreweb-web:$(Build.BuildNumber)*
+  
 **Configure this to correspond with your own running image, build and pushed image and tag**
 
 ![Release](/doc/release.PNG)
