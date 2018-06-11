@@ -77,7 +77,7 @@ Set the action to *Tag images* and for the *Image Names Path* browse to your tag
 
 ![Tagging](/doc/tagging.PNG)
 
-5.	As a third step, search for *Docker* once more and configure the following:
+5.	Add a third build step, search for *Docker* once more and configure the following:
 
 Container Registry Type: Azure Container Registry
 Azure Subscription: <Select your newly created Service Endpoint>
