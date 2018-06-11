@@ -23,13 +23,13 @@ Firstly we need to prepare VSTS. Because we are using docker-compose and Kuberne
 
 When the extensions are installed, commit the code to your project. If you don't know how this works you can look it up here: https://docs.microsoft.com/en-us/vsts/git/share-your-code-in-git-vs-2017?view=vsts. 
 
-# tagging
+# Tagging
 If you are not using the files in this repository, you will need to create an extra file to store the image name of the image(s) you are tagging. To clarify: it is best practice to tag your images (versions) and have some form of versioning on your images stored in ACR. 
 
 Create the tags.txt in the root folder of your project and store the name(s) of images your will tag before pushing them to ACR. For example
 *acrdemo01.azurecr.io/demo-netcoreweb-web*
 
-![Tags](/doc/tags.ng)
+![Tags](/doc/tags.png)
 
 Save the file and make sure you can find it later :)
 
