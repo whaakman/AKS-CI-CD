@@ -60,7 +60,7 @@ Once again verify the connection and create the endpoint.
 # Build Definition
 Create a new build definition (*Build and release* --> *New*) for your project use the *master* branch or a different branch if you chose to use one earlierr. The build definition is pretty straight forward.
 
-1.	From the process definition make sure you select the �Hosted Linux Preview� as an agent queue (unless you are running Windows containers). 
+1.	From the process definition make sure you select the *Hosted Linux Preview* as an agent queue (unless you are running Windows containers). 
 ![Agent](/doc/Agent.PNG)
 2.	From Phase 1, make sure the agent queue is set to *<inherit from definition>*
 
@@ -106,10 +106,10 @@ Once your build is successful you can create a release process.
 Configure the following settings:
 
 Display name: *Set image*
-Kubernetes Service Connection: *<Select your Kubernetes service endpoint here>*
-Namespace: empty for default or enter your namespace if your configured one
+Kubernetes Service Connection: *Select your Kubernetes service endpoint here*
+Namespace: *Empty for default or enter your namespace if your configured one*
 Command: *set*
-Arguments: **example** *image deployment demo-netcoreweb-web demo-netcoreweb-web=acrdemo01.azurecr.io/demo-netcoreweb-web:$(Build.BuildNumber)*
+Arguments: **example** image deployment demo-netcoreweb-web demo-netcoreweb-web=acrdemo01.azurecr.io/demo-netcoreweb-web:$(Build.BuildNumber)*
   
 **Configure this to correspond with your own running image, build and pushed image and tag**
 
