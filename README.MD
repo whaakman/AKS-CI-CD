@@ -2,9 +2,10 @@
 
 # Introduction
 Azure Kubernetes Service (AKS) is still in preview and it's one of many  ways you can run and manage your containers within Microsoft Azure. There are multiple ways to deploy your containers to AKS but from a DevOps perspective I prefer the build and release through Visual Studio Team Services and of course integrate CI/CD concepts. 
-Some basic knowledge regarding Visual Studio Team Services, Visual Studio and AKS / Containers are required. If you haven't mastered the basics, the links will give you a push in the right direction.   
+Some basic knowledge regarding Visual Studio Team Services, Visual Studio and AKS / Containers is required. If you haven't mastered the basics, the links will give you a push in the right direction.   
 
 For the following to work make sure you have the following in place:
+
 -	Working Azure Kubernetes Service (AKS) with Azure Container Registry (ACR). If you don't have one running, Microsoft has a great tutorial on deploying your newly created containers to AKS. 
 https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app
 -	Docker-compose file;
@@ -117,7 +118,7 @@ Arguments: **example** image deployment demo-netcoreweb-web demo-netcoreweb-web=
 
 5.	Save the release and run it
 
-And that's it. Once you commit new updates to your repository your container will build and release using your Azure Kubernetes Service.
+And that's it! Once you commit new updates to your repository, your container will build and release using docker and your Azure Kubernetes Service.
 
 
 
