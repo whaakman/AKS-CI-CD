@@ -1,0 +1,1 @@
+acrdemo01.azurecr.io/demo-netcoreweb-web
