@@ -1,11 +1,11 @@
 ![VSTS](/doc/kubernetes_cicd.PNG)
 
-##Introduction
-Azure Kubernetes Service (AKS) is still in preview and it�s one of many  ways you can run and manage your containers within Microsoft Azure. There are multiple ways to deploy your containers to AKS but from a DevOps perspective I prefer the build and release through Visual Studio Team Services and of course integrate CI/CD concepts. 
+# Introduction
+Azure Kubernetes Service (AKS) is still in preview and it's one of many  ways you can run and manage your containers within Microsoft Azure. There are multiple ways to deploy your containers to AKS but from a DevOps perspective I prefer the build and release through Visual Studio Team Services and of course integrate CI/CD concepts. 
 Some basic knowledge regarding Visual Studio Team Services, Visual Studio and AKS / Containers are required. If you haven�t mastered the basics, the links will give you a push in the right direction.   
 
 For the following to work make sure you have the following in place:
--	Working Azure Kubernetes Service (AKS) with Azure Container Registry (ACR). If you don�t have one running, Microsoft has a great tutorial on deploying your newly created containers to AKS. 
+-	Working Azure Kubernetes Service (AKS) with Azure Container Registry (ACR). If you don't have one running, Microsoft has a great tutorial on deploying your newly created containers to AKS. 
 https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app
 -	Docker-compose file;
 -	An image publish to ACR; 
@@ -14,7 +14,7 @@ https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app
 
 If you did not use the Microsoft Azure AKS tutorial (all the way through) and you don't have an image at hand you can download the code in this repository. This repository will have all the files you need to configure CI-CD with VSTS for Docker and Kubernetes. Make sure to configure your application insights (or remove it if you wish).
 
-#Preparing VSTS
+# Preparing VSTS
 Firstly we need to prepare VSTS. Because we are using docker-compose and Kubernetes (KubeCTL) we need to install the VSTS extensions. From the VSTS browse to extensions (https://[yourvstsaccount].visualstudio.com/_admin/_extensions) and open the marketplace. Install the following extensions:
 -	Docker Integration;
 -	Kubernetes Extension.
@@ -23,17 +23,17 @@ Firstly we need to prepare VSTS. Because we are using docker-compose and Kuberne
 
 When the extensions are installed, commit the code to your project. If you don't know how this works you can look it up here: https://docs.microsoft.com/en-us/vsts/git/share-your-code-in-git-vs-2017?view=vsts. 
 
-##tagging
+# tagging
 If you are not using the files in this repository, you will need to create an extra file to store the image name of the image(s) you are tagging. To clarify: it is best practice to tag your images (versions) and have some form of versioning on your images stored in ACR. 
 
 Create the tags.txt in the root folder of your project and store the name(s) of images your will tag before pushing them to ACR. For example
 *acrdemo01.azurecr.io/demo-netcoreweb-web*
 
-![Tags](/doc/tags.PNG)
+![Tags](/doc/tags.ng)
 
 Save the file and make sure you can find it later :)
 
-##Service Endpoints
+# Service Endpoints
 Before we configure the build definition you are required to create the endpoints for your Azure Subscription and AKS.
 Go to *Services* and add a new Service Endpoint. Search for *Azure Resource Manager*. If your account already has access to a Microsoft Azure Subscription where ACR is located, the automated configuration will do.
 
@@ -91,7 +91,7 @@ Additional Image tag: $(Build.BuildNumber)
 
 7.	Save and queue your build and wait for it to complete
 
-#Release
+# Release
 Once your build is successful you can create a release process.
 1.	Navigate to release and add a new release. 
 
