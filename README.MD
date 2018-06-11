@@ -2,7 +2,7 @@
 
 # Introduction
 Azure Kubernetes Service (AKS) is still in preview and it's one of many  ways you can run and manage your containers within Microsoft Azure. There are multiple ways to deploy your containers to AKS but from a DevOps perspective I prefer the build and release through Visual Studio Team Services and of course integrate CI/CD concepts. 
-Some basic knowledge regarding Visual Studio Team Services, Visual Studio and AKS / Containers are required. If you haven�t mastered the basics, the links will give you a push in the right direction.   
+Some basic knowledge regarding Visual Studio Team Services, Visual Studio and AKS / Containers are required. If you haven't mastered the basics, the links will give you a push in the right direction.   
 
 For the following to work make sure you have the following in place:
 -	Working Azure Kubernetes Service (AKS) with Azure Container Registry (ACR). If you don't have one running, Microsoft has a great tutorial on deploying your newly created containers to AKS. 
@@ -67,7 +67,7 @@ Create a new build definition (*Build and release* --> *New*) for your project u
 3.	Add the first step and search for *Docker Compose*
 From the *Docker Compose File* browse to the compose file in your project. Configure te *Action* to run a Docker Compose command. The command we will run is *build*.
 
-![compose build](compose_build.PNG)
+![compose build](/doc/compose_build.PNG)
 
 4.	Add a new step and search for *Docker*
 Set the action to *Tag images* and for the *Image Names Path* browse to your tags.txt. Additionally we will configure a tag to correspond with your VSTS build number. As an additional image tag set *$(Build.BuildNumber)*
