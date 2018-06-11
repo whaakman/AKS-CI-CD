@@ -66,11 +66,13 @@ Create a new build definition (*Build and release* --> *New*) for your project u
 2.	From Phase 1, make sure the agent queue is set to *<inherit from definition>*
 
 3.	Add the first step and search for *Docker Compose*
+
 From the *Docker Compose File* option browse to the compose file in your project. Configure te *Action* to run a Docker Compose command. The command we will run is *build*.
 
 ![compose build](/doc/compose_build.PNG)
 
 4.	Add a new step and search for *Docker*
+
 Set the action to *Tag images* and for the *Image Names Path* browse to your tags.txt. Additionally we will configure a tag to correspond with your VSTS build number. As an additional image tag set *$(Build.BuildNumber)*
 
 ![Tagging](/doc/tagging.PNG)
@@ -94,6 +96,7 @@ Additional Image tag: $(Build.BuildNumber)
 
 # Release
 Once your build is successful you can create a release process.
+
 1.	Navigate to release and add a new release. 
 
 2.	Add your build definition to the artifacts.
