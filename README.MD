@@ -1,7 +1,7 @@
 ![VSTS](/doc/kubernetes_cicd.PNG)
 
 # Introduction
-Azure Kubernetes Service (AKS) is still in preview and it's one of many  ways you can run and manage your containers within Microsoft Azure. There are multiple ways to deploy your containers to AKS but from a DevOps perspective I prefer the build and release through Visual Studio Team Services and of course integrate CI/CD concepts. 
+Azure Kubernetes Service (AKS) is still in preview and it's one of many  ways you can run and manage your containers with Microsoft Azure. There are multiple ways to deploy your containers to AKS but from a DevOps perspective I prefer the build and release through Visual Studio Team Services and of course integrate CI/CD concepts. 
 Some basic knowledge regarding Visual Studio Team Services, Visual Studio and AKS / Containers is required. If you haven't mastered the basics, the links will give you a push in the right direction.   
 
 For the following to work make sure you have the following in place:
@@ -9,23 +9,23 @@ For the following to work make sure you have the following in place:
 -	Working Azure Kubernetes Service (AKS) with Azure Container Registry (ACR). If you don't have one running, Microsoft has a great tutorial on deploying your newly created containers to AKS. 
 https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app
 -	Docker-compose file;
--	An image publish to ACR; 
+-	An image published to ACR; 
 -	Visual Studio Team Services account;
 -	Empty project.
 
 If you did not use the Microsoft Azure AKS tutorial (all the way through) and you don't have an image at hand you can download the code in this repository. This repository will have all the files you need to configure CI-CD with VSTS for Docker and Kubernetes. Make sure to configure your application insights (or remove it if you wish).
 
 # Preparing VSTS
-Firstly we need to prepare VSTS. Because we are using docker-compose and Kubernetes (KubeCTL) we need to install the VSTS extensions. From the VSTS browse to extensions (https://[yourvstsaccount].visualstudio.com/_admin/_extensions) and open the marketplace. Install the following extensions:
+First we need to prepare VSTS. Because we are using docker-compose and Kubernetes (KubeCTL) we need to install the VSTS extensions. From the VSTS browse to extensions (https://[yourvstsaccount].visualstudio.com/_admin/_extensions) and open the marketplace. Install the following extensions:
 -	Docker Integration;
 -	Kubernetes Extension.
 
 ![Extensions](/doc/Extensions.PNG)
 
-When the extensions are installed, commit the code to your project. If you don't know how this works you can look it up here: https://docs.microsoft.com/en-us/vsts/git/share-your-code-in-git-vs-2017?view=vsts. 
+When the extensions are installed, commit the code to your project. If you don't know how to do this, this will help: https://docs.microsoft.com/en-us/vsts/git/share-your-code-in-git-vs-2017?view=vsts. 
 
 # Tagging
-If you are not using the files in this repository, you will need to create an extra file to store the image name of the image(s) you are tagging. To clarify: it is best practice to tag your images (versions) and have some form of versioning on your images stored in ACR. 
+If you are not using the files in this repository, you will need to create an extra file to store the names of the image(s) you are tagging. To clarify: it is best practice to tag your images (versions) and have some form of versioning on your images stored in ACR. 
 
 Create the tags.txt in the root folder of your project and store the name(s) of images your will tag before pushing them to ACR. For example
 *acrdemo01.azurecr.io/demo-netcoreweb-web*
@@ -35,7 +35,7 @@ Create the tags.txt in the root folder of your project and store the name(s) of 
 Save the file and make sure you can find it later :)
 
 # Service Endpoints
-Before we configure the build definition you are required to create the endpoints for your Azure Subscription and AKS.
+Before we configure the build definition you are required to create the endpoints for your Azure Subscription and your AKS environment.
 Go to *Services* and add a new Service Endpoint. Search for *Azure Resource Manager*. If your account already has access to a Microsoft Azure Subscription where ACR is located, the automated configuration will do.
 
 Additionally you can configure the connection to use a different subscription using a Service Principal (click *use the full version of the endpoint dialog*). **Make sure your ACR is located within this subscription.**
