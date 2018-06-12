@@ -51,7 +51,8 @@ Configure the following:
 
 Connection Name: AKS
 Server URL: The Address of your Kubernetes Master, you can retrieve this by running *kubectl cluster-info* Look for *Kubernetes master is running at*
-KubeConfig: Paste the contents of your Kubernetes config file. If you used the Microsoft Tutorial mentioned earlier it will be stored in c:\user\<yourusername>\.kube\config.
+
+KubeConfig: Paste the contents of your Kubernetes config file. If you used the Microsoft Tutorial mentioned earlier it will be stored in c:\user\yourusername\.kube\config.
 
 Once again verify the connection and create the endpoint.
 
